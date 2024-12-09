@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int pilihan, jumlah;
+	char lagi;
+	float harga, totalHarga = 0;
+	
+	cout << "Selamat Datang di Aplikasi Pembelian Kopi!\n";
+	
+	do {
+		// Menampilkan menu kopi
+		cout << "\nMenu Kopi: \n";
+		cout << "1. Espresso - Rp 15000\n";
+		cout << "2. Latte - Rp 20000\n";
+		cout << "3. Cappuccino - Rp 25000\n";
+		cout << "4. Americano - Rp 18000\n";
+		cout << "Pilih Kopi (1-4) : ";
+		cin >> pilihan;
+		
+		// Menentukan harga kopi berdasarkan pilihan
+		switch (pilihan) {
+			case 1:
+				harga = 15000;
+				cout << "Anda memilih Espresso.\n";
+				break;
+			case 2:
+				harga = 20000;
+				cout << "Anda memilih Latte.\n";
+				break;
+			case 3:
+				harga = 25000;
+				cout << "Anda memilih Cappuccino.\n";
+				break;
+			case 4:
+				harga = 18000;
+				cout << "Anda memilih Americano.\n";
+				break;
+			default:
+				cout << "Pilihan tidak valid.\n";
+				continue; // Kembali ke menu jika pilihan tidak valid
+		}
+		
+		// Meminta jumlah kopi yang dibeli
+		cout << "Masukkan jumlah yang ingin dibeli: ";
+		cin >> jumlah;
+		
+		// Menghitung total harga untuk kopi yang dipilih
+		totalHarga += harga * jumlah;
+		cout << "Subtotal: Rp " << harga *  jumlah << endl;
+		
+		//  Menanyakan apakah ingin membeli lagi
+		cout << "Ingin membeli kopi lagi? (Y/N): ";
+		cin >> lagi;
+		
+	} while (lagi== 'y' || lagi == 'Y');
+	
+	// Menampilkan total harga akhir
+	cout << "\nTotal harga semua pesanan Anda adalah: Rp " << totalHarga << endl;
+	cout << "Terima kasih telah berbelanja!\n";
+	
+	return 0;
+		}
